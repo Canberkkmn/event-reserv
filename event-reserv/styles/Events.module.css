@@ -1,50 +1,59 @@
 /* Events.module.css */
+
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  
-  .container {
-    max-width: 800px;
-    width: 100%;
-  }
-  
-  .eventLink {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .event {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-  }
-  
-  .event:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .eventTitle {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .eventDescription {
-    margin-bottom: 0.5rem;
-  }
-  
-  .eventPrice,
-  .eventDate {
-    color: #555;
-  }
-  
-  .eventDate {
-    font-style: italic;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh; /* Ensure main content area covers the viewport height */
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center; /* Center the title within the container */
+  margin-top: 2rem; /* Add some margin at the top for spacing */
+}
+
+.eventLink {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.event {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer; /* Show pointer cursor on hoverable elements */
+}
+
+.event:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Slightly raise the card on hover */
+}
+
+.eventTitle {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.eventDescription {
+  margin-bottom: 0.5rem;
+  color: #555; /* Darken description text for better readability */
+}
+
+.eventPrice,
+.eventDate {
+  color: #777; /* Lighter color for price and date */
+  margin-top: 0.5rem;
+}
+
+.eventDate {
+  font-style: italic;
+}

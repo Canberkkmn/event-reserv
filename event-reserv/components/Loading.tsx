@@ -1,15 +1,12 @@
-import { CircularProgress, Grid } from '@mui/material';
+import React from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import loadingStyles from '../styles/Loading.module.css';
 
 const Loading: React.FC = () => {
   return (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      style={{ height: '100vh' }}
-    >
-      <CircularProgress color="primary" />
-    </Grid>
+    <div className={loadingStyles.loadingOverlay}>
+      <CircularProgress className={loadingStyles.spinner} />
+    </div>
   );
 };
 

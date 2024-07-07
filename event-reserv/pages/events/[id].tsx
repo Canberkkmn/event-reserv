@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
+import Loading from '../../components/Loading';
 import styles from '../../styles/EventDetails.module.css';
 
 interface Event {
@@ -21,7 +22,7 @@ export default function EventDetails({ event }: EventDetailsProps) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
@@ -73,7 +74,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!;
-  const res = await fetch(`http://localhost:3000/api/events`);
+  const res = await fetch('http://localhost:3000/api/events');
   const events: Event[] = await res.json();
   const event = events.find((event) => event.id === parseInt(id as string, 10));
 
