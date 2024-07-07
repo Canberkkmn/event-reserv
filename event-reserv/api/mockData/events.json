@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "title": "Tech Conference 2024",
+    "description": "A conference for tech enthusiasts.",
+    "price": 199.99,
+    "date": "2024-08-01"
+  },
+  {
+    "id": 2,
+    "title": "Art Exhibition",
+    "description": "A display of modern art.",
+    "price": 15.0,
+    "date": "2024-08-05"
+  },
+  {
+    "id": 3,
+    "title": "Music Festival",
+    "description": "An outdoor music festival.",
+    "price": 89.99,
+    "date": "2024-08-10"
+  },
+  {
+    "id": 4,
+    "title": "Cooking Workshop",
+    "description": "Learn to cook gourmet meals.",
+    "price": 50.0,
+    "date": "2024-08-12"
+  },
+  {
+    "id": 5,
+    "title": "Yoga Retreat",
+    "description": "A weekend of yoga and relaxation.",
+    "price": 299.99,
+    "date": "2024-08-15"
+  },
+  {
+    "id": 6,
+    "title": "Book Fair",
+    "description": "A fair for book lovers.",
+    "price": 10.0,
+    "date": "2024-08-18"
+  },
+  {
+    "id": 7,
+    "title": "Film Festival",
+    "description": "Showcasing indie films.",
+    "price": 30.0,
+    "date": "2024-08-20"
+  },
+  {
+    "id": 8,
+    "title": "Marathon",
+    "description": "Annual city marathon.",
+    "price": 75.0,
+    "date": "2024-08-25"
+  },
+  {
+    "id": 9,
+    "title": "Photography Workshop",
+    "description": "Improve your photography skills.",
+    "price": 120.0,
+    "date": "2024-08-28"
+  },
+  {
+    "id": 10,
+    "title": "Wine Tasting",
+    "description": "Sample fine wines.",
+    "price": 60.0,
+    "date": "2024-08-30"
+  },
+  {
+    "id": 11,
+    "title": "Gardening Seminar",
+    "description": "Tips and tricks for your garden.",
+    "price": 25.0,
+    "date": "2024-09-02"
+  },
+  {
+    "id": 12,
+    "title": "Science Fair",
+    "description": "Exhibits and experiments.",
+    "price": 20.0,
+    "date": "2024-09-05"
+  },
+  {
+    "id": 13,
+    "title": "Chess Tournament",
+    "description": "Compete with the best.",
+    "price": 40.0,
+    "date": "2024-09-08"
+  },
+  {
+    "id": 14,
+    "title": "Theater Play",
+    "description": "Watch a live performance.",
+    "price": 35.0,
+    "date": "2024-09-10"
+  },
+  {
+    "id": 15,
+    "title": "Fashion Show",
+    "description": "Latest trends in fashion.",
+    "price": 50.0,
+    "date": "2024-09-12"
+  },
+  {
+    "id": 16,
+    "title": "Comedy Night",
+    "description": "An evening of stand-up comedy.",
+    "price": 20.0,
+    "date": "2024-09-15"
+  },
+  {
+    "id": 17,
+    "title": "Craft Fair",
+    "description": "Handmade crafts and goods.",
+    "price": 5.0,
+    "date": "2024-09-18"
+  },
+  {
+    "id": 18,
+    "title": "Startup Pitch",
+    "description": "Pitch your startup idea.",
+    "price": 100.0,
+    "date": "2024-09-20"
+  },
+  {
+    "id": 19,
+    "title": "Dance Workshop",
+    "description": "Learn new dance moves.",
+    "price": 45.0,
+    "date": "2024-09-22"
+  },
+  {
+    "id": 20,
+    "title": "Coding Bootcamp",
+    "description": "Intensive coding sessions.",
+    "price": 500.0,
+    "date": "2024-09-25"
+  },
+  {
+    "id": 21,
+    "title": "Food Festival",
+    "description": "Taste dishes from around the world.",
+    "price": 25.0,
+    "date": "2024-09-28"
+  },
+  {
+    "id": 22,
+    "title": "Pet Expo",
+    "description": "Everything for your pet.",
+    "price": 15.0,
+    "date": "2024-09-30"
+  },
+  {
+    "id": 23,
+    "title": "Charity Run",
+    "description": "Run for a cause.",
+    "price": 30.0,
+    "date": "2024-10-02"
+  },
+  {
+    "id": 24,
+    "title": "Meditation Retreat",
+    "description": "Find your inner peace.",
+    "price": 200.0,
+    "date": "2024-10-05"
+  },
+  {
+    "id": 25,
+    "title": "Language Workshop",
+    "description": "Learn a new language.",
+    "price": 150.0,
+    "date": "2024-10-08"
+  },
+  {
+    "id": 26,
+    "title": "Car Show",
+    "description": "Exhibit of classic and modern cars.",
+    "price": 20.0,
+    "date": "2024-10-10"
+  },
+  {
+    "id": 27,
+    "title": "Magic Show",
+    "description": "A night of magic and illusion.",
+    "price": 25.0,
+    "date": "2024-10-12"
+  },
+  {
+    "id": 28,
+    "title": "Robotics Expo",
+    "description": "Showcase of the latest robots.",
+    "price": 35.0,
+    "date": "2024-10-15"
+  },
+  {
+    "id": 29,
+    "title": "Gaming Convention",
+    "description": "Everything for gamers.",
+    "price": 45.0,
+    "date": "2024-10-18"
+  },
+  {
+    "id": 30,
+    "title": "Environmental Summit",
+    "description": "Discussing sustainability.",
+    "price": 55.0,
+    "date": "2024-10-20"
+  }
+]
