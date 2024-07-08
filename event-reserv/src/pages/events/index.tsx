@@ -3,16 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Container, Typography } from '@mui/material';
 import Loading from '@/src/components/Loading';
-
+import { Event } from '@/src/types/types';
 import styles from '@/src/styles/Events.module.css';
-
-interface Event {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  date: string;
-}
 
 export default function Events() {
   const [events, setEvents] = useState<Event[]>([]);

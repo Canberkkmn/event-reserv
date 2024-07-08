@@ -24,8 +24,6 @@ export default function Reservation() {
   };
 
   const timeLeft = useCountdownTimer(10, handleTimerEnd); // 900 seconds = 15 minutes
-
-  // Format timer display (minutes and seconds) using utility function
   const formattedTime = formatTime(timeLeft);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,7 +47,6 @@ export default function Reservation() {
             Reservation for Event {id}
           </Typography>
 
-          {/* Display timer */}
           <Typography variant="h6" component="h6" gutterBottom>
             Time left: {formattedTime}
           </Typography>
