@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Button, Container, TextField, Typography } from '@mui/material';
 import useReservationForm from '@/src/hooks/useReservationForm';
+import useCountdownTimer from '@/src/hooks/useCountdownTimer';
+import { formatTime } from '@/src/utils/formatTime';
 import styles from '@/src/styles/Reservation.module.css';
 
 export default function Reservation() {
@@ -15,6 +17,16 @@ export default function Reservation() {
     handleChangeEmail,
     handleChangePhone,
   } = useReservationForm();
+
+  const handleTimerEnd = () => {
+    alert('Time is up! Please try again.');
+    router.push('/');
+  };
+
+  const timeLeft = useCountdownTimer(10, handleTimerEnd); // 900 seconds = 15 minutes
+
+  // Format timer display (minutes and seconds) using utility function
+  const formattedTime = formatTime(timeLeft);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,6 +47,11 @@ export default function Reservation() {
         <Container className={styles.container}>
           <Typography variant="h4" component="h4" gutterBottom>
             Reservation for Event {id}
+          </Typography>
+
+          {/* Display timer */}
+          <Typography variant="h6" component="h6" gutterBottom>
+            Time left: {formattedTime}
           </Typography>
 
           <form className={styles.form} onSubmit={handleSubmit}>
