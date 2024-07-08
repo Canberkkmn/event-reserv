@@ -1,5 +1,5 @@
-import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
+
 import loadingStyles from '../styles/Loading.module.css';
 
 const Loading: React.FC = () => {

@@ -18,7 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
-        <Container>
+        <Container className={styles.container}>
           <Typography variant="h3" component="h3" gutterBottom>
             Welcome to Event Booking App
           </Typography>
@@ -26,6 +26,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             onClick={handleButtonClick}
+            className={styles.listEventButton}
           >
             List Events
           </Button>

@@ -7,3 +7,14 @@
   height: 100vh;
   text-align: center;
 }
+
+.container {
+  gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listEventButton {
+  width: 50%;
+}
