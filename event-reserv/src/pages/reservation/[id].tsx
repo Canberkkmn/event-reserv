@@ -34,6 +34,14 @@ const Reservation: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Perform form validation here if needed
+    if (!name || !email || !phone) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    // Navigate to payment page with query params
     router.push({
       pathname: `/payment`,
       query: { id, name, email, phone },
@@ -65,6 +73,7 @@ const Reservation: React.FC = () => {
               margin="normal"
               value={name}
               onChange={(e) => handleChangeName(e.target.value)}
+              required
             />
             <TextField
               label="Email"
@@ -74,6 +83,7 @@ const Reservation: React.FC = () => {
               type="email"
               value={email}
               onChange={(e) => handleChangeEmail(e.target.value)}
+              required
             />
             <TextField
               label="Phone"
@@ -82,6 +92,7 @@ const Reservation: React.FC = () => {
               margin="normal"
               value={phone}
               onChange={(e) => handleChangePhone(e.target.value)}
+              required
             />
             <Button variant="contained" color="primary" type="submit">
               Submit
