@@ -4,7 +4,13 @@ import { Container, TextField, Typography, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import styles from '@/src/styles/Payment.module.css';
 
-export default function Payment() {
+/**
+ * Payment page component.
+ *
+ * @component
+ * @returns {JSX.Element} The payment page component.
+ */
+const Payment: React.FC = () => {
   const router = useRouter();
   const { id, name, email, phone } = router.query;
 
@@ -105,4 +111,6 @@ export default function Payment() {
       </main>
     </>
   );
-}
+};
+
+export default Payment;

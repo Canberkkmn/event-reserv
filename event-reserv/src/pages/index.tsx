@@ -4,7 +4,13 @@ import { Button, Container, Typography } from '@mui/material';
 
 import styles from '@/src/styles/Home.module.css';
 
-export default function Home() {
+/**
+ * Home page component.
+ *
+ * @component
+ * @returns {JSX.Element} The home page component.
+ */
+const Home: React.FC = () => {
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -35,4 +41,6 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+export default Home;

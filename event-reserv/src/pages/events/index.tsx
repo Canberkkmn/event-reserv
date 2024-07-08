@@ -6,7 +6,13 @@ import Loading from '@/src/components/Loading';
 import { Event } from '@/src/types/types';
 import styles from '@/src/styles/Events.module.css';
 
-export default function Events() {
+/**
+ * Events page component.
+ *
+ * @component
+ * @returns {JSX.Element} The events page component.
+ */
+const Events: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -66,4 +72,6 @@ export default function Events() {
       </main>
     </>
   );
-}
+};
+
+export default Events;

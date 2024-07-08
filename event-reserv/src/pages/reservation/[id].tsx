@@ -6,7 +6,13 @@ import useCountdownTimer from '@/src/hooks/useCountdownTimer';
 import { formatTime } from '@/src/utils/formatTime';
 import styles from '@/src/styles/Reservation.module.css';
 
-export default function Reservation() {
+/**
+ * Reservation page component.
+ *
+ * @component
+ * @returns {JSX.Element} The reservation page component.
+ */
+const Reservation: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
   const {
@@ -23,7 +29,7 @@ export default function Reservation() {
     router.push('/');
   };
 
-  const timeLeft = useCountdownTimer(10, handleTimerEnd); // 900 seconds = 15 minutes
+  const timeLeft = useCountdownTimer(15 * 60, handleTimerEnd); // 15 minutes converted to seconds
   const formattedTime = formatTime(timeLeft);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -85,4 +91,6 @@ export default function Reservation() {
       </main>
     </>
   );
-}
+};
+
+export default Reservation;

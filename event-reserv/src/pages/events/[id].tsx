@@ -3,14 +3,22 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
 import { Event } from '@/src/types/types';
-
 import styles from '@/src/styles/EventDetails.module.css';
 
 interface EventDetailsProps {
   event: Event;
 }
 
-export default function EventDetails({ event }: EventDetailsProps) {
+/**
+ * Event details page component.
+ *
+ * @component
+ * @param {EventDetailsProps} props - The properties for the component.
+ * @param {Event} props.event - The event object containing details.
+ *
+ * @returns {JSX.Element} The event details page component.
+ */
+const EventDetails: React.FC<EventDetailsProps> = ({ event }) => {
   return (
     <>
       <Head>
@@ -45,8 +53,15 @@ export default function EventDetails({ event }: EventDetailsProps) {
       </main>
     </>
   );
-}
+};
 
+export default EventDetails;
+
+/**
+ * Get static paths for event details pages.
+ *
+ * @returns {Promise<{ paths: { params: { id: string; } }[]; fallback: boolean; }>} The paths for the event detail pages.
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('http://localhost:3000/api/events');
   const events: Event[] = await res.json();
@@ -58,6 +73,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true };
 };
 
+/**
+ * Get static props for an event details page.
+ *
+ * @param {import('next').GetStaticPropsContext} context - The context for the static props function.
+ * @returns {Promise<{ props: { event: Event; }; revalidate: number; } | { notFound: boolean; }>} The event data or a not found response.
+ */
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!;
   const res = await fetch('http://localhost:3000/api/events');
