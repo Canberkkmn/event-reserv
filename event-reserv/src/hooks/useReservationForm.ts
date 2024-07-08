@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function useReservationForm() {
+const useReservationForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -17,4 +17,6 @@ export default function useReservationForm() {
     handleChangeEmail,
     handleChangePhone,
   };
-}
+};
+
+export default useReservationForm;

@@ -2,15 +2,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
-import styles from '@/src/styles/EventDetails.module.css';
+import { Event } from '@/src/types/types';
 
-interface Event {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  date: string;
-}
+import styles from '@/src/styles/EventDetails.module.css';
 
 interface EventDetailsProps {
   event: Event;

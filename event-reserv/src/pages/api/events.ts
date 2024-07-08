@@ -1,11 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getEvents, Event } from '@/src/utils/getEvents';
+import { getEvents } from '@/src/utils/getEvents';
+import { Event } from '@/src/types/types';
 import { logError } from '@/src/utils/logger';
 
-export default async function handler(
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<Event[] | { message: string }>
-) {
+) => {
   try {
     if (req.method === 'GET') {
       const events = await getEvents();
@@ -18,4 +19,6 @@ export default async function handler(
     logError('Error handling events API', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
-}
+};
+
+export default handler;

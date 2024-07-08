@@ -1,12 +1,5 @@
 import eventsData from '@/public/api/mockData/events.json';
-
-export type Event = {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  date: string;
-};
+import { Event } from '@/src/types/types';
 
 export const getEvents = (): Promise<Event[]> => {
   return new Promise((resolve) => {
