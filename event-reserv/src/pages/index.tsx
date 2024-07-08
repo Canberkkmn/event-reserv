@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Button, Container, Typography } from '@mui/material';
-import styles from '../styles/Home.module.css';
+
+import styles from '@/src/styles/Home.module.css';
 
 export default function Home() {
   const router = useRouter();

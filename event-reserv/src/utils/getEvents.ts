@@ -1,4 +1,5 @@
-import eventsData from '../public/api/mockData/events.json';
+import eventsData from '@/public/api/mockData/events.json';
+
 export type Event = {
   id: number;
   title: string;

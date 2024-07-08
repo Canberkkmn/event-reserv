@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Container, Typography } from '@mui/material';
-import Loading from '@/components/Loading';
+import Loading from '@/src/components/Loading';
 
-import styles from '../../styles/Events.module.css';
+import styles from '@/src/styles/Events.module.css';
 
 interface Event {
   id: number;

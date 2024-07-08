@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Container, TextField, Typography, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
-import styles from '../../styles/Payment.module.css';
+import styles from '@/src/styles/Payment.module.css';
 
 export default function Payment() {
   const router = useRouter();

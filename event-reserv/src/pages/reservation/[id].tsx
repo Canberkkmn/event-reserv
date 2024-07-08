@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Button, Container, TextField, Typography } from '@mui/material';
-import { useTimer } from '../../context/TimerContext';
-import useReservationForm from '../../utils/useReservationForm';
-import styles from '../../styles/Reservation.module.css';
+import useReservationForm from '@/src/hooks/useReservationForm';
+import styles from '@/src/styles/Reservation.module.css';
 
 export default function Reservation() {
   const router = useRouter();
   const { id } = router.query;
-  const { remainingTime } = useTimer();
   const {
     name,
     email,
@@ -39,12 +36,7 @@ export default function Reservation() {
           <Typography variant="h4" component="h4" gutterBottom>
             Reservation for Event {id}
           </Typography>
-          {remainingTime !== null && remainingTime >= 0 && (
-            <Typography variant="subtitle1" gutterBottom>
-              Time remaining: {Math.floor(remainingTime / 60)}:
-              {('0' + (remainingTime % 60)).slice(-2)}
-            </Typography>
-          )}
+
           <form className={styles.form} onSubmit={handleSubmit}>
             <TextField
               label="Name"

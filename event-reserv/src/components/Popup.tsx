@@ -1,4 +1,3 @@
-// components/Popup.tsx
 import {
   Dialog,
   DialogTitle,

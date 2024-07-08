@@ -1,10 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
-import Loading from '../../components/Loading';
-import styles from '../../styles/EventDetails.module.css';
+import styles from '@/src/styles/EventDetails.module.css';
 
 interface Event {
   id: number;

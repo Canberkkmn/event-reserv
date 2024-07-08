@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getEvents, Event } from '../../utils/getEvents';
-import { logError } from '../../utils/logger';
+import { getEvents, Event } from '@/src/utils/getEvents';
+import { logError } from '@/src/utils/logger';
 
 export default async function handler(
   req: NextApiRequest,
