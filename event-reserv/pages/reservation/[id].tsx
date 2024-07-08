@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Button, Container, TextField, Typography } from '@mui/material';
-import Popup from '../../components/Popup';
 import { useTimer } from '../../context/TimerContext';
 import useReservationForm from '../../utils/useReservationForm';
 import styles from '../../styles/Reservation.module.css';
@@ -10,7 +9,7 @@ import styles from '../../styles/Reservation.module.css';
 export default function Reservation() {
   const router = useRouter();
   const { id } = router.query;
-  const { remainingTime, setRemainingTime } = useTimer();
+  const { remainingTime } = useTimer();
   const {
     name,
     email,
@@ -19,17 +18,6 @@ export default function Reservation() {
     handleChangeEmail,
     handleChangePhone,
   } = useReservationForm();
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    if (remainingTime === 0) {
-      handleTimeout();
-    }
-  }, [remainingTime]);
-
-  function handleTimeout() {
-    setShowPopup(true);
-  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,12 +25,6 @@ export default function Reservation() {
       pathname: `/payment`,
       query: { id, name, email, phone },
     });
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-    router.push('/events'); // Redirect to events page after closing popup
-    localStorage.removeItem('remainingTime');
   };
 
   return (
@@ -93,7 +75,6 @@ export default function Reservation() {
               Submit
             </Button>
           </form>
-          <Popup open={showPopup} onClose={handleClosePopup} />
         </Container>
       </main>
     </>

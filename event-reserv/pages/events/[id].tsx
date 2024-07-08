@@ -19,12 +19,6 @@ interface EventDetailsProps {
 }
 
 export default function EventDetails({ event }: EventDetailsProps) {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <Loading />;
-  }
-
   return (
     <>
       <Head>
