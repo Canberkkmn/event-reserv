@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { Container, TextField, Typography, Button } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { Container, Typography } from '@mui/material';
+import PaymentForm from '@/src/components/PaymentForm';
 import styles from '@/src/styles/Payment.module.css';
 
 /**
@@ -18,6 +19,9 @@ const Payment: React.FC = () => {
     name: '',
     email: '',
     phone: '',
+    creditCardNumber: '',
+    expiryDate: '',
+    cvv: '',
   });
 
   useEffect(() => {
@@ -26,14 +30,25 @@ const Payment: React.FC = () => {
         name: name as string,
         email: email as string,
         phone: phone as string,
+        creditCardNumber: '',
+        expiryDate: '',
+        cvv: '',
       });
     }
   }, [name, email, phone]);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   const handlePayment = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle payment logic here
-    console.log('Payment processed');
+    alert('Payment successful!');
   };
 
   return (
@@ -49,63 +64,11 @@ const Payment: React.FC = () => {
             Complete Payment for Event {id}
           </Typography>
           {formData.name && formData.email && formData.phone && (
-            <form className={styles.form} onSubmit={handlePayment}>
-              <TextField
-                label="Name"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                value={formData.name}
-                InputProps={{
-                  readOnly: true,
-                }}
-              />
-              <TextField
-                label="Email"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                type="email"
-                value={formData.email}
-                InputProps={{
-                  readOnly: true,
-                }}
-              />
-              <TextField
-                label="Phone"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                value={formData.phone}
-                InputProps={{
-                  readOnly: true,
-                }}
-              />
-              <TextField
-                label="Credit Card Number"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                type="text"
-              />
-              <TextField
-                label="Expiry Date"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                type="text"
-              />
-              <TextField
-                label="CVV"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-                type="text"
-              />
-              <Button variant="contained" color="primary" type="submit">
-                Pay Now
-              </Button>
-            </form>
+            <PaymentForm
+              formData={formData}
+              onChange={handleInputChange}
+              onSubmit={handlePayment}
+            />
           )}
         </Container>
       </main>

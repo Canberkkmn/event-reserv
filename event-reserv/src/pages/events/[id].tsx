@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Container, Typography } from '@mui/material';
 import { Event } from '@/src/types/types';
+import Loading from '@/src/components/Loading';
+import { logError } from '@/src/utils/logger';
 import styles from '@/src/styles/EventDetails.module.css';
 
 interface EventDetailsProps {
@@ -19,6 +21,10 @@ interface EventDetailsProps {
  * @returns {JSX.Element} The event details page component.
  */
 const EventDetails: React.FC<EventDetailsProps> = ({ event }) => {
+  if (!event) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Head>
@@ -63,14 +69,28 @@ export default EventDetails;
  * @returns {Promise<{ paths: { params: { id: string; } }[]; fallback: boolean; }>} The paths for the event detail pages.
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://localhost:3000/api/events');
-  const events: Event[] = await res.json();
+  try {
+    const res = await fetch('http://localhost:3000/api/events');
 
-  const paths = events.map((event) => ({
-    params: { id: event.id.toString() },
-  }));
+    if (!res.ok) {
+      throw new Error('Failed to fetch events');
+    }
 
-  return { paths, fallback: true };
+    const events: Event[] = await res.json();
+
+    const paths = events.map((event) => ({
+      params: { id: event.id.toString() },
+    }));
+
+    return { paths, fallback: true };
+  } catch (error: any) {
+    logError('Error fetching events', error.message);
+
+    return {
+      paths: [],
+      fallback: true,
+    };
+  }
 };
 
 /**
@@ -81,18 +101,28 @@ export const getStaticPaths: GetStaticPaths = async () => {
  */
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!;
-  const res = await fetch('http://localhost:3000/api/events');
-  const events: Event[] = await res.json();
-  const event = events.find((event) => event.id === parseInt(id as string, 10));
 
-  if (!event) {
+  try {
+    const res = await fetch('http://localhost:3000/api/events');
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch event with id ${id}`);
+    }
+
+    const events: Event[] = await res.json();
+    const event = events.find(
+      (event) => event.id === parseInt(id as string, 10)
+    );
+
+    return {
+      props: { event },
+      revalidate: 10,
+    };
+  } catch (error: any) {
+    logError('Error fetching event', error.message);
+
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { event },
-    revalidate: 10, // Revalidate at most every 10 seconds
-  };
 };
