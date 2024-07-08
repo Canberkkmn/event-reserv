@@ -5,3 +5,6 @@ export type Event = {
   price: number;
   date: string;
 };
+
+export type SortType = 'price' | 'date' | 'title';
+export type SortOrder = 'asc' | 'desc';

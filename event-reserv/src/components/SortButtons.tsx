@@ -1,8 +1,6 @@
 import { Button } from '@mui/material';
+import { SortType, SortOrder } from '../types/types';
 import styles from '@/src/styles/Events.module.css';
-
-type SortType = 'price' | 'date' | 'title';
-type SortOrder = 'asc' | 'desc';
 
 interface SortButtonsProps {
   sortBy: SortType;

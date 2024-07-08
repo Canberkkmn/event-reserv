@@ -1,13 +1,9 @@
 import { useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import { Container, Typography } from '@mui/material';
-import { Event } from '@/src/types/types';
+import { Event, SortOrder, SortType } from '@/src/types/types';
 import SortButtons from '@/src/components/SortButtons';
 import styles from '@/src/styles/Events.module.css';
-
-// Define type aliases for sort types and orders
-type SortType = 'price' | 'date' | 'title';
-type SortOrder = 'asc' | 'desc';
 
 interface SortedEventsProps {
   events: Event[];
