@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { Container, Typography } from '@mui/material';
 import Loading from '@/src/components/Loading';
+import SortedEvents from '@/src/components/SortedEvents';
 import { Event } from '@/src/types/types';
 import styles from '@/src/styles/Events.module.css';
 
@@ -35,40 +34,7 @@ const Events: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
-        {loading ? (
-          <Loading />
-        ) : (
-          <Container className={styles.container}>
-            <Typography variant="h3" component="h3" gutterBottom>
-              List of Events
-            </Typography>
-            {events.map((event) => (
-              <Link href={`/events/${event.id}`} key={event.id}>
-                <div className={styles.event}>
-                  <Typography
-                    variant="h5"
-                    component="h5"
-                    className={styles.eventTitle}
-                  >
-                    {event.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    className={styles.eventDescription}
-                  >
-                    {event.description}
-                  </Typography>
-                  <Typography variant="body2" className={styles.eventPrice}>
-                    ${event.price.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body2" className={styles.eventDate}>
-                    {event.date}
-                  </Typography>
-                </div>
-              </Link>
-            ))}
-          </Container>
-        )}
+        {loading ? <Loading /> : <SortedEvents events={events} />}
       </main>
     </>
   );

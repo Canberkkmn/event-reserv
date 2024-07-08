@@ -6,14 +6,14 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  min-height: 100vh; /* Ensure main content area covers the viewport height */
+  min-height: 100vh;
 }
 
 .container {
   max-width: 800px;
   width: 100%;
-  text-align: center; /* Center the title within the container */
-  margin-top: 2rem; /* Add some margin at the top for spacing */
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .eventLink {
@@ -29,12 +29,12 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s, transform 0.3s;
-  cursor: pointer; /* Show pointer cursor on hoverable elements */
+  cursor: pointer;
 }
 
 .event:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px); /* Slightly raise the card on hover */
+  transform: translateY(-3px);
 }
 
 .eventTitle {
@@ -45,15 +45,45 @@
 
 .eventDescription {
   margin-bottom: 0.5rem;
-  color: #555; /* Darken description text for better readability */
+  color: #555;
 }
 
 .eventPrice,
 .eventDate {
-  color: #777; /* Lighter color for price and date */
+  color: #777;
   margin-top: 0.5rem;
 }
 
 .eventDate {
   font-style: italic;
+}
+
+.sortButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sortButton:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+.sortButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.5);
 }
