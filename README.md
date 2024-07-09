@@ -2,11 +2,6 @@
 
 This is a simple app for booking reservations for events. It uses mock data (for now).
 
-# Demo
-
-You can access demo link from here:
-https://event-reserv.vercel.app/
-
 ## Tech Stack
 
 - ReactJS
