@@ -35,12 +35,6 @@ const Reservation: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Perform form validation here if needed
-    if (!name || !email || !phone) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
     // Navigate to payment page with query params
     router.push({
       pathname: `/payment`,
