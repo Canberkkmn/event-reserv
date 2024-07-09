@@ -80,7 +80,7 @@ const SortedEvents: React.FC<SortedEventsProps> = ({ events }) => {
             <Typography variant="body2" className={styles.eventPrice}>
               ${event.price.toFixed(2)}
             </Typography>
-            <Typography variant="body2" className={styles.eventDate}>
+            <Typography variant="body2" className={styles.eventDate} data-testid="event-date">
               {event.date}
             </Typography>
           </div>

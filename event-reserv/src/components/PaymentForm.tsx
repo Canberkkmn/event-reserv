@@ -26,6 +26,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="text"
+        data-testid="name"
         name="name"
         value={formData.name}
         onChange={onChange}
@@ -37,6 +38,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="email"
+        data-testid="email"
         name="email"
         value={formData.email}
         onChange={onChange}
@@ -48,6 +50,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="text"
+        data-testid="phone"
         name="phone"
         value={formData.phone}
         onChange={onChange}
@@ -59,6 +62,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="text"
+        data-testid="credit-card-number"
         name="creditCardNumber"
         value={formData.creditCardNumber}
         onChange={onChange}
@@ -70,6 +74,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="text"
+        data-testid="expiry-date"
         name="expiryDate"
         value={formData.expiryDate}
         onChange={onChange}
@@ -81,6 +86,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         fullWidth
         margin="normal"
         type="text"
+        data-testid="cvv"
         name="cvv"
         value={formData.cvv}
         onChange={onChange}

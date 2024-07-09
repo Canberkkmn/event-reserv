@@ -12,8 +12,11 @@ import loadingStyles from '@/src/styles/Loading.module.css';
  */
 const Loading: React.FC = () => {
   return (
-    <div className={loadingStyles.loadingOverlay}>
-      <CircularProgress className={loadingStyles.spinner} />
+    <div className={loadingStyles.loadingOverlay} data-testid="loading-overlay">
+      <CircularProgress
+        className={loadingStyles.spinner}
+        data-testid="loading-spinner"
+      />
     </div>
   );
 };
